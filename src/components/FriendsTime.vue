@@ -56,9 +56,6 @@ export default {
   margin-bottom: 1%;
   border-radius: 10px;
 }
-/* .column{
-  float:left;
-} */
 p{
   font-size:110%;
   margin: 0;

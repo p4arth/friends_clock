@@ -442,16 +442,18 @@ export default {
   methods: {
     addNewFriendTime: function(){
       const fname = document.getElementById("ip-fname").value;
-      const ftimezone = document.getElementById("timezones").value;
-      const newElem = {
-        name: fname,
-        timezone: ftimezone,
-      };
-      this.friends.push(newElem);
-      const jsonObj = JSON.parse(localStorage.getItem("friendsArray"));
-      jsonObj.push(newElem);
-      localStorage.setItem("friendsArray", JSON.stringify(jsonObj));
-      window.location.reload();
+      if(fname !== ""){
+        const ftimezone = document.getElementById("timezones").value;
+        const newElem = {
+          name: fname,
+          timezone: ftimezone,
+        };
+        this.friends.push(newElem);
+        const jsonObj = JSON.parse(localStorage.getItem("friendsArray"));
+        jsonObj.push(newElem);
+        localStorage.setItem("friendsArray", JSON.stringify(jsonObj));
+        window.location.reload();
+      }
     },
     deleteFriendCard: function(idx){
       // Remove the element from the DOM
